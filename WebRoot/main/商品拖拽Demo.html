@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="../js/jquery-1.11.1.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".img").click(function(){
+			$(this).clone(true).appendTo(".shopCart").unbind().click(function(){
+				$(this).remove();
+			});
+			
+		});
+		$(".tooltip").mouseover(function(e){
+			this.tempTitle = this.title;
+			this.title = "";
+			var tooltip = "<div id='tooltip'>"+this.tempTitle+"</div>";
+			$("body").append(tooltip);
+			$("#tooltip").css(
+				{
+					"position":"absolute",
+					"background-color":"#DDD",
+					"top" : (e.pageY +10) + "px",
+					"left" : (e.pageX+20) + "px"
+				}
+			).show("fast");
+			//alert($("#tooltip").css('top'));
+//			alert($("#tooltip").css('left'));
+		}).mouseout(function(){
+			this.title = this.tempTitle;
+			$("#tooltip").remove();
+		}).mousemove(function(e){
+			$("#tooltip").css(
+				{
+					"top" : (e.pageY +10) + "px",
+					"left" : (e.pageX+20) + "px"
+				});
+		});
+		//图片预览图
+		$('.img a').mouseover(function(e){
+			var imgTitle = '<img class="imgBig" src="'+this.href+'"/>';
+			$('body').append(imgTitle);
+			$('.imgBig').css(
+				{
+					"top" : (e.pageY +10) + "px",
+					"left" : (e.pageX+20) + "px"
+				}
+			).show("fast");
+		}).mouseleave(function(){
+			$('.imgBig').remove();
+		});
+	});
+</script>
+<style>
+.contain{
+	width:90%;
+	height:2000px;
+	margin:0 auto;
+	border:1px solid #CCCCCC;
+}
+.imgBox{
+	width:100%;
+	height:100px;
+	margin:0 auto;
+}
+.img{
+	float:left;
+	width:20%;
+	height:100px;
+	margin:2%;
+	text-align:center;
+	position:relative;
+}
+.imgBig{
+	position:absolute;
+	border:2px solid #FFF;
+	width:250px;
+	
+}
+</style>
+<title>拖拽商品</title>
+</head>
+
+<body>
+
+	<div id="contain">
+    	<div class="imgBox">
+        	<div class="img">
+            <a href="http://tupian.enterdesk.com/2012/1013/zyz/04/Maldives_Travel_01001.jpg.680.510.jpg">
+            	<img src="http://tupian.enterdesk.com/2012/1013/zyz/04/Maldives_Travel_01007.jpg.200.150.jpg" alt=""/>
+            </a>
+            </div>
+            <div class="img">
+            <a href="http://tupian.enterdesk.com/2014/lxy/2014/12/03/36/9.jpg.680.510.jpg">
+            	<img src="http://tupian.enterdesk.com/2014/lxy/2014/12/03/36/1.jpg.200.150.jpg" alt=""/>
+            </a>
+            </div>
+            <div class="img">
+            <a href="http://tupian.enterdesk.com/2013/mxy/12/17/3/1.jpg.680.510.jpg">
+            	<img src="http://tupian.enterdesk.com/2013/mxy/12/17/3/9.jpg.200.150.jpg" alt=""/>
+            </a>
+            </div>
+            <div class="img">
+            <a href="http://tupian.enterdesk.com/2013/mxy/12/17/3/9.jpg.680.510.jpg">
+            	<img src="http://tupian.enterdesk.com/2013/xll/012/30/3/1.jpg.200.150.jpg" alt=""/>
+            </a>
+            </div>
+        </div>
+        <div class="shopCart" style="background-color:#CCFF00; width:200px; height:200px; float:right;">
+        	
+        </div>
+    </div>
+</body>
+</html>
