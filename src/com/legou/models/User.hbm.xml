@@ -3,7 +3,7 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.legou.entities.User" table="user_table">
+	<class name="com.legou.models.User" table="user_table">
 		<id name="uid">
 			<generator class="native" />
 		</id>

@@ -24,6 +24,11 @@
 <script src="js/jquery-1.11.1.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
+<!-- 加载插件  -->
+<script src="js/formValidator-4.1.3.min.js" type="text/javascript"></script>
+<!-- 加载扩展库(如果想用里面的函数、正则表达式，必须加载该文件)-->
+<script src="js/formValidatorRegex.js" type="text/javascript"></script>
+
 <title>注册中心</title>
 
 </head>
@@ -44,16 +49,24 @@
 		</div>
 	</div>
 	<div class="loginBox clearfix">
-		<form id="loginForm" action="register.do" method="post">
+		<form id="regForm" action="register.do" method="post">
 			<div class="loginText">
-				<label for="username">邮箱/用户名/手机</label><br /> <input id="username"
-					name="username" type="text" /> <label for="password">密码</label><br />
-				<input id="password" name="password" type="password" /> <label
-					for="confirmPassword">确认密码</label><br/> <input
-					id="confirmPassword" name="confirmPassword" type="password" /> <label
-					for="userEmail">邮箱</label><br /> <input id="userEmail" name="userEmail"
-					type="text" /> <label for="userAddress">地址</label><br /> <input
-					id="userAddress" name="userAddress" type="text" />
+				<label for="username">邮箱/用户名/手机</label><br /> 
+				<input id="username" name="username" type="text" />
+				<span class="messageBox"></span>
+				
+				<label for="password">密码</label><br />
+				<input id="password" name="password" type="password" /> 
+				<span class="messageBox"></span>
+				
+				<label for="confirmPassword">确认密码</label><br/> 
+				<input id="confirmPassword" name="confirmPassword" type="password" />
+				<span class="messageBox"></span> 
+				
+				<label for="userEmail">验证邮箱</label><br /> 
+				<input id="userEmail" name="userEmail" type="text" /> 
+				<span class="messageBox"></span>
+				
 			</div>
 			<div class="agreeBox">
 				<input id="agree" class="agree" type="checkbox" name="autoLogin"

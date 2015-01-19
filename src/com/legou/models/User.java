@@ -1,18 +1,21 @@
 package com.legou.models;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class User {
-	private String uid;
+	
+	
+	@Size(min=6,max=12,message="用户名长度必须在6-12之间！")
+	@Pattern(regexp="[a-zA-Z0-9]{6,12}",message="用户名格式不正确！")
 	private String username;
+	@Size(min=6,max=12,message="密码长度必须在6-12之间！")
 	private String password;
-	private String userPhone;
-	private String userEmail;
-	private String userAddress;
-	public String getUid() {
-		return uid;
-	}
-	public void setUid(String uid) {
-		this.uid = uid;
-	}
+	private String phone;
+	@Pattern(regexp="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",message="邮件格式错误！")
+	private String email;
+	private String address;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -25,23 +28,24 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getUserPhone() {
-		return userPhone;
+	public String getPhone() {
+		return phone;
 	}
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public String getUserEmail() {
-		return userEmail;
+	public String getEmail() {
+		return email;
 	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getUserAddress() {
-		return userAddress;
+	public String getAddress() {
+		return address;
 	}
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
+	
 	
 }

@@ -189,19 +189,19 @@ background:url(../images/icon/car.jpg) 6px center no-repeat;}
 .loginTitle p{ font:22px/83px "Microsoft YaHei","微软雅黑"; color:#FFF; margin-left:24px;}
 /*登录框*/
 .loginBox{ width:459px; margin:0 auto; border:1px solid #E1E1E1; position:relative; margin-top:10px; margin-bottom:150px;}
-form#loginForm{  margin:42px 66px 22px 86px;}
-form#loginForm *{ font-family:"宋体";  font-size:14px; color:#999;}
+form#loginForm,form#regForm{  margin:42px 66px 22px 86px;}
+form#loginForm *,form#regForm *{ font-family:"宋体";  font-size:14px; color:#999;}
 .loginText *{ width:100%;color:#999;}
 .loginText input{height:32px;}
-form#loginForm input{ margin-top:4px; margin-bottom:15px;}
+form#loginForm input,form#regForm input{ margin-top:4px; margin-bottom:15px;}
 .loginBox input{ border:1px solid #E1E1E1;}
-form#loginForm .loginCheck{ color:#000; width:auto;}
-form#loginForm input[type="submit"]{ width:100%; height:34px; font-size:16px; color:#606060; font-weight:bold; background: #FFF;               
+form#loginForm .loginCheck,form#regForm .loginCheck{ color:#000; width:auto;}
+form#loginForm input[type="submit"],form#regForm input[type="submit"]{ width:100%; height:34px; font-size:16px; color:#606060; font-weight:bold; background: #FFF;               
 			background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#D0D0D0));background: -moz-linear-gradient(top, #FFF, #D0D0D0);            background: -o-linear-gradient(#FFF, #D0D0D0);  
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A284B', endColorstr='#135887');   zoom:1;}
-form#loginForm .linkBox a { height:15px;color:#666;  padding:0 3px; margin-top:8px; margin-bottom:22px; border-right:1px solid #DBDBDB; display:inline-block;}
-form#loginForm a:hover{ color:red;}
-form#loginForm .linkBox a.loginMore{border-right:none;}
+form#loginForm .linkBox a ,form#regForm .linkBox a{ height:15px;color:#666;  padding:0 3px; margin-top:8px; margin-bottom:22px; border-right:1px solid #DBDBDB; display:inline-block;}
+form#loginForm a:hover,form#regForm a:hover{ color:red;}
+form#loginForm .linkBox a.loginMore,form#regForm .linkBox a.loginMore{border-right:none;}
 .toReg{width:115px; height:32px; font-size:17px; position:absolute; bottom:-32px; right:41px; background-color:#7CBE56; color:#FFF;border-radius:3px;
 -moz-border-radius:25px; /* 老的 Firefox */} 
 .toReg p{ text-align:center; margin:9px 0; font-weight:bold; }
@@ -209,3 +209,12 @@ form#loginForm .linkBox a.loginMore{border-right:none;}
 #password,#confirmPassword{ background:url(../images/icon/password_icon.png) right 7px no-repeat;}
 .agreeBox{ width:230px; height:13px;font-size:12px; margin-bottom:34px;}
 form#loginForm .agree a{ color:#005AA0; }
+.des_content{padding:10px; }
+.des_content h3{font:bold 16px/20px "Microsoft YaHei","微软雅黑";padding:13px 25px;}
+.des_content .dt{width:75px; float:left; color:#666; text-indent:17px; line-height:25px; font-family:"新宋体"}
+.des_content .dl{ margin-bottom:10px;}
+.des_money{font-size:18px; color:#D70000; font-family:Verdana; float:left; }
+.des_money em{ font-style:normal; font-size:12px;}
+/*换购*/
+.hg{ padding-top:4px; display:inline-block;}
+.hg_icon{ width:54px; height:18px; display:inline-block; color:#fff; background:url(../images/icon/hg_icon.jpg) left top no-repeat; text-indent:16px; line-height:18px; margin-right:5px; font-style:normal;}

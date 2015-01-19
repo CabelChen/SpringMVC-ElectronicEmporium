@@ -10,7 +10,6 @@
 	<context:component-scan base-package="com.legou">  
     <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>  
 	</context:component-scan>  
-	
 	<bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
         <property name="location" value="classpath:jdbc.properties"/>  
     </bean> 
@@ -30,7 +29,7 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>com/legou/entities/User.hbm.xml</value>
+				<value>com/legou/models/User.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -85,7 +84,68 @@
 	
 	<bean id="user" class="com.legou.models.User">
 	</bean>
-	<!-- server -->
 	<bean id="userLogin" class="com.legou.services.imples.UserLogin"/>
-	<bean id="userDaoImpl" class="com.legou.dao.impl.UserDaoImpl"/>
-</beans>
+	
+	<!-- DAO -->
+	<bean id="OrderGoodsDAO" class="com.legou.dao.impl.OrderGoodsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="GoodsDAO" class="com.legou.dao.impl.GoodsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AdministratorDAO"
+		class="com.legou.dao.impl.AdministratorDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrdersDAO" class="com.legou.dao.impl.OrdersDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AttrValueDAO" class="com.legou.dao.impl.AttrValueDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AddgoodsDAO" class="com.legou.dao.impl.AddgoodsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="GoodstypeDAO" class="com.legou.dao.impl.GoodstypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RecieverDAO" class="com.legou.dao.impl.RecieverDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ClerkDAO" class="com.legou.dao.impl.ClerkDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ShoppingcartDAO"
+		class="com.legou.dao.impl.ShoppingcartDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="GoodstAttrDAO" class="com.legou.dao.impl.GoodstAttrDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CustomerDAO" class="com.legou.dao.impl.CustomerDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean></beans>
